@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niranjana Krishna | Python Developer & Django Specialist</title>
+    <meta name="description" content="Portfolio of Niranjana Krishna, Python Developer and Django Specialist. Building clean, scalable, and user-friendly web applications.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;900&family=Bebas+Neue&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgDark: '#050505',
+                        cardDark: '#111111',
+                        accentAmber: '#E8B17C',
+                        textPrimary: '#FFFFFF',
+                        textSecondary: '#BDBDBD',
+                    },
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        bebas: ['Bebas Neue', 'sans-serif'],
+                        syne: ['Syne', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#050505] text-white font-outfit overflow-x-hidden relative selection:bg-accentAmber/30 selection:text-white">
+    <!-- Spotlight Background Effect -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div id="bg-spotlight" class="absolute w-[800px] h-[800px] rounded-full bg-radial-glow opacity-30 blur-[150px] transition-transform duration-200 ease-out pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 w-full z-50 border-b border-white/5 bg-[#050505]/40 backdrop-blur-md transition-all duration-300">
+        <div class="max-w-[1320px] mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Left Logo -->
+            <a href="#home" class="logo-link font-syne text-2xl font-bold tracking-tight text-white flex items-center gap-1 group">
+                NK<span class="text-accentAmber group-hover:scale-150 transition-transform duration-300">.</span>
+            </a>
+
+            <!-- Center Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-widest text-textSecondary">
+                <a href="#home" class="nav-link hover:text-white transition-colors duration-300 relative py-2">HOME</a>
+                <a href="#about" class="nav-link hover:text-white transition-colors duration-300 relative py-2">ABOUT</a>
+                <a href="#skills" class="nav-link hover:text-white transition-colors duration-300 relative py-2">SKILLS</a>
+                <a href="#projects" class="nav-link hover:text-white transition-colors duration-300 relative py-2">PROJECTS</a>
+                <a href="#contact" class="nav-link hover:text-white transition-colors duration-300 relative py-2">CONTACT</a>
+            </nav>
+
+            <!-- Right Glass Button -->
+            <a href="#contact" class="magnetic-button relative inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider text-white border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 overflow-hidden group hover:border-accentAmber/50 hover:shadow-lg hover:shadow-accentAmber/5">
+                <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-accentAmber/10 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></span>
+                <span class="relative z-10 flex items-center gap-2">
+                    Let's Connect
+                    <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                </span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Social Sidebar -->
+    <div class="fixed left-6 bottom-1/2 translate-y-1/2 z-40 hidden lg:flex flex-col gap-6 p-4 rounded-full border border-white/5 bg-[#111111]/30 backdrop-blur-md glass-card shadow-2xl">
+        <a href="https://github.com/Niranjana183" target="_blank" class="group relative p-3 rounded-full text-textSecondary transition-all duration-300 flex items-center justify-center hover:scale-[1.15] cursor-pointer" aria-label="GitHub">
+            <div class="absolute inset-0 bg-accentAmber/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 relative z-10 transition-colors duration-300 group-hover:text-accentAmber"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span class="absolute left-full ml-4 px-2 py-1 bg-[#111111]/90 border border-white/10 rounded text-[11px] font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap backdrop-blur-sm shadow-xl tracking-wider">GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/niranjana-krishna-139673319" target="_blank" class="group relative p-3 rounded-full text-textSecondary transition-all duration-300 flex items-center justify-center hover:scale-[1.15] cursor-pointer" aria-label="LinkedIn">
+            <div class="absolute inset-0 bg-accentAmber/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 relative z-10 transition-colors duration-300 group-hover:text-accentAmber"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <span class="absolute left-full ml-4 px-2 py-1 bg-[#111111]/90 border border-white/10 rounded text-[11px] font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap backdrop-blur-sm shadow-xl tracking-wider">LinkedIn</span>
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=niranjanakrishna.dev@gmail.com" target="_blank" class="group relative p-3 rounded-full text-textSecondary transition-all duration-300 flex items-center justify-center hover:scale-[1.15] cursor-pointer" aria-label="Email">
+            <div class="absolute inset-0 bg-accentAmber/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            <i data-lucide="mail" class="w-5 h-5 relative z-10 transition-colors duration-300 group-hover:text-accentAmber"></i>
+            <span class="absolute left-full ml-4 px-2 py-1 bg-[#111111]/90 border border-white/10 rounded text-[11px] font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap backdrop-blur-sm shadow-xl tracking-wider">Email</span>
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-[1320px] mx-auto px-6 relative z-10 pt-20">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[calc(100vh-80px)] flex flex-col justify-center py-12 lg:py-24 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column -->
+                <div class="lg:col-span-7 flex flex-col justify-center z-10">
+                    <span class="text-xs font-semibold tracking-[0.3em] text-accentAmber mb-2 uppercase animate-fade-in block">
+                        HEY, I'M
+                    </span>
+                    
+                    <h1 class="hero-title font-bebas text-[14vw] sm:text-[10vw] lg:text-[7.5vw] font-black leading-[0.8] tracking-[-0.04em] text-white uppercase mb-4 selection:bg-accentAmber/40">
+                        NIRANJANA<br>
+                        <span class="text-transparent stroke-text hover:text-white transition-colors duration-500">KRISHNA</span>
+                    </h1>
+
+                    <!-- Badges -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase border border-accentAmber/20 bg-accentAmber/5 text-accentAmber">
+                            <span class="w-1.5 h-1.5 rounded-full bg-accentAmber animate-pulse"></span>
+                            Python Developer
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase border border-white/10 bg-white/5 text-white/80">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+                            Django Specialist
+                        </span>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-base sm:text-lg text-textSecondary leading-relaxed max-w-[480px] mb-8 font-light">
+                        I build clean, scalable and user-friendly web applications using Python, Django, REST APIs and SQL databases.
+                    </p>
+
+                    <!-- Call To Actions -->
+                    <div class="flex flex-wrap gap-4">
+                        <!-- Primary Button -->
+                        <a href="#projects" class="magnetic-button inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold tracking-wider text-black bg-accentAmber transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(232,177,124,0.3)] group">
+                            View Projects
+                            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"></i>
+                        </a>
+
+                        <!-- Secondary Button -->
+                        <a href="#contact" class="magnetic-button inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-semibold tracking-wider text-white border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/10 group">
+                            Connect
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column (Hero Image & Floating Card) -->
+                <div class="lg:col-span-5 relative flex justify-center items-center h-[70vh] lg:h-[100vh] w-full overflow-hidden">
+                    <!-- Glow Behind Image -->
+                    <div class="absolute w-[90%] h-[90%] rounded-full bg-accentAmber/20 blur-[100px] -z-10 animate-pulse"></div>
+
+                    <!-- Portrait Image Container -->
+                    <div class="relative w-full h-full flex items-center justify-center image-container group">
+                        <img src="portrait.png" 
+                             onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/ff205ca6-ef7b-49b2-9f35-a86c74654ab1/media__1783876931203.png';"
+                             alt="Niranjana Krishna" 
+                             class="hero-portrait w-full h-full object-contain filter brightness-95 transition-all duration-700 ease-out"
+                             loading="eager">
+                        <!-- Subtle ambient shadow gradient overlay -->
+                        <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#050505]/40 via-transparent to-transparent"></div>
+                    </div>
+
+                    <!-- Floating Graduation Card -->
+                    <div class="absolute bottom-12 right-4 sm:right-8 z-20 floating-widget-entrance">
+                        <div class="p-5 rounded-2xl border border-white/10 bg-[#111111]/50 backdrop-blur-md shadow-2xl glass-card floating-widget min-w-[280px] sm:min-w-[320px]">
+                            <div class="flex items-center gap-4">
+                                <div class="p-3 rounded-xl bg-white/5 text-white/85 border border-white/10 flex items-center justify-center shrink-0">
+                                    <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-white tracking-wide">B.Voc Data Science</h4>
+                                    <p class="text-[11px] text-textSecondary/80 mt-1 font-medium">St. Thomas' College (Autonomous)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 border-t border-white/5 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-4">
+                    <span class="text-xs font-semibold tracking-[0.3em] text-accentAmber mb-2 uppercase block">ABOUT ME</span>
+                    <h2 class="font-bebas text-5xl sm:text-6xl text-white tracking-wide uppercase leading-none">CRAFTING ROBUST<br><span class="text-accentAmber">BACKENDS</span></h2>
+                </div>
+                <div class="lg:col-span-8 flex flex-col gap-6 text-textSecondary font-light leading-relaxed text-base sm:text-lg">
+                    <p>
+                        I am a highly motivated developer studying Data Science with a core passion for building enterprise-ready Python and Django backend architectures. I specialize in designing structured relational database patterns, writing performant RESTful APIs, and implementing clean code workflows.
+                    </p>
+                    <p>
+                        My academic journey combined with real-world project developments has equipped me with practical skills in database schema optimization, application testing, security hardening, and deployment structures. I love taking complex backend logic and packaging it into simple, highly-efficient APIs.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 border-t border-white/5 relative overflow-hidden">
+            <!-- Subtle Grid Background -->
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#111111_1px,transparent_1px),linear-gradient(to_bottom,#111111_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-25 -z-10"></div>
+            
+            <!-- Vignette shadow wrapper -->
+            <div class="absolute inset-0 bg-radial-vignette pointer-events-none -z-10"></div>
+
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12">
+                <!-- Left Title Column (32% width) -->
+                <div class="w-full lg:w-[32%] lg:shrink-0 flex flex-col justify-between min-h-[380px] lg:min-h-[440px] z-10 text-left py-6">
+                    <div class="flex flex-col mb-8">
+                        <span class="text-xs font-semibold tracking-[0.3em] text-accentAmber mb-6 uppercase block">MY TOOLKIT</span>
+                        <h2 class="tech-editorial-title text-white uppercase mb-6">
+                            TECH I BUILD<br>
+                            WITH
+                        </h2>
+                    </div>
+                    <p class="text-base text-textSecondary leading-relaxed font-light max-w-[280px]">
+                        Building modern web applications with technologies I use every day.
+                    </p>
+                </div>
+
+                <!-- Center Orbit Column (43% width) -->
+                <div class="w-full lg:w-[43%] lg:shrink-0 flex items-center justify-center relative min-h-[600px] lg:min-h-[680px] z-10 overflow-visible" id="tech-orbit-container">
+                    <!-- Particle Container overlay -->
+                    <div id="orbit-particles" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+                    
+                    <!-- Soft radial glow behind the orbit -->
+                    <div class="absolute w-[550px] h-[550px] rounded-full bg-radial-glow opacity-40 blur-[80px] pointer-events-none"></div>
+                    <div class="absolute w-[300px] h-[300px] rounded-full bg-accentAmber/10 blur-[100px] pointer-events-none"></div>
+
+                    <!-- Main Orbit Window/Scale Wrapper to ensure responsiveness -->
+                    <div class="orbit-wrapper relative w-[800px] h-[800px] flex items-center justify-center scale-[0.45] sm:scale-[0.6] md:scale-[0.75] lg:scale-[0.85] xl:scale-[0.95] transition-transform duration-300">
+                        
+                        <!-- Orbital Lines -->
+                        <div class="orbital-ring orbital-ring-inner absolute rounded-full border border-white/5 pointer-events-none"></div>
+                        <div class="orbital-ring orbital-ring-middle absolute rounded-full border border-white/5 pointer-events-none"></div>
+                        <div class="orbital-ring orbital-ring-outer absolute rounded-full border border-white/5 pointer-events-none"></div>
+
+                        <!-- Python Center Glass Sphere -->
+                        <div class="python-center-sphere absolute w-[270px] h-[270px] rounded-full flex items-center justify-center z-30 pointer-events-auto">
+                            <!-- Outer glow ring -->
+                            <div class="absolute inset-0 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_0_40px_rgba(232,177,124,0.25)]"></div>
+                            <!-- Python SVG Icon -->
+                            <svg class="w-24 h-24 relative z-10 drop-shadow-[0_0_10px_rgba(232,177,124,0.4)]" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M54.912 0C25.0454 0 26.8524 12.9231 26.8524 12.9231L26.8974 26.7027H55.4522C64.6713 26.7027 72.1378 33.7237 72.1378 42.9298V61.1215C72.1378 61.1215 84.1593 62.2471 91.8143 54.9118C99.4674 47.5784 99.1993 34.3312 99.1993 34.3312C99.1993 34.3312 100.222 17.6534 88.5833 8.3582C76.9427 -0.938923 54.912 0 54.912 0ZM38.4552 7.74796C41.4883 7.74796 43.9535 10.2113 43.9535 13.2424C43.9535 16.2735 41.4883 18.7368 38.4552 18.7368C35.4241 18.7368 32.9589 16.2735 32.9589 13.2424C32.9589 10.2113 35.4241 7.74796 38.4552 7.74796Z" fill="#D5B08A"/>
+                                <path d="M44.2869 98.4239C74.1534 98.4239 72.3484 85.5008 72.3484 85.5008L72.3034 71.7212H43.7487C34.5276 71.7212 27.0631 64.7002 27.0631 55.4941V37.3023C27.0631 37.3023 15.0416 36.1768 7.38652 43.5121C-0.266567 50.8455 0.00155288 64.0926 0.00155288 64.0926C0.00155288 64.0926 -1.02157 80.7704 10.6171 90.0656C22.2577 99.3627 44.2869 98.4239 44.2869 98.4239ZM60.7437 90.676C57.7106 90.676 55.2454 88.2127 55.2454 85.1816C55.2454 82.1505 57.7106 79.6872 60.7437 79.6872C63.7748 79.6872 66.24 82.1505 66.24 85.1816C66.24 88.2127 63.7748 90.676 60.7437 90.676Z" fill="#E8B17C"/>
+                            </svg>
+                        </div>
+
+                        <!-- Inner Ring Tech Cards (Radius ~ 230px) -->
+                        <div class="tech-card-orbit inner-orbit-item absolute pointer-events-auto" data-tech="django">
+                            <div class="tech-card-inner">
+                                <span class="tech-icon"><i data-lucide="layers" class="w-4 h-4"></i></span>
+                                <span class="tech-name">Django</span>
+                            </div>
+                        </div>
+                        <div class="tech-card-orbit inner-orbit-item absolute pointer-events-auto" data-tech="restapi">
+                            <div class="tech-card-inner">
+                                <span class="tech-icon"><i data-lucide="webhook" class="w-4 h-4"></i></span>
+                                <span class="tech-name">REST API</span>
+                            </div>
+                        </div>
+                        <div class="tech-card-orbit inner-orbit-item absolute pointer-events-auto" data-tech="postgresql">
+                            <div class="tech-card-inner">
+                                <span class="tech-icon"><i data-lucide="database" class="w-4 h-4"></i></span>
+                                <span class="tech-name">PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="tech-card-orbit inner-orbit-item absolute pointer-events-auto" data-tech="mysql">
+                            <div class="tech-card-inner">
+                                <span class="tech-icon"><i data-lucide="database-backup" class="w-4 h-4"></i></span>
+                                <span class="tech-name">MySQL</span>
+                            </div>
+                        </div>
+
+                        <!-- Middle Ring Tech Cards (Radius ~ 310px) -->
+                        <div class="tech-card-orbit middle-orbit-item absolute pointer-events-auto" data-tech="mongodb">
+                            <div class="tech-card-inner">
+                                <span class="tech-icon"><i data-lucide="box" class="w-4 h-4"></i></span>
+                                <span class="tech-name">MongoDB</span>
+                            </div>
+                        </div>
+                        <div class="tech-card-orbit middle-orbit-item absolute pointer-events-auto" data-tech="java">
+                            <div class="tech-card-inner">
+                                <span class="tech-icon"><i data-lucide="coffee" class="w-4 h-4"></i></span>
+                                <span class="tech-name">Java</span>
+                            </div>
+                        </div>
+                        <div class="tech-card-orbit middle-orbit-item absolute pointer-events-auto" data-tech="html5">
+                            <div class="tech-card-inner">
+                                <span class="tech-icon"><i data-lucide="html5" class="w-4 h-4"></i></span>
+                                <span class="tech-name">HTML5</span>
+                            </div>
+                        </div>
+                        <div class="tech-card-orbit middle-orbit-item absolute pointer-events-auto" data-tech="css3">
+                            <div class="tech-card-inner">
+                                <span class="tech-icon"><i data-lucide="palette" class="w-4 h-4"></i></span>
+                                <span class="tech-name">CSS3</span>
+                            </div>
+                        </div>
+                        <div class="tech-card-orbit middle-orbit-item absolute pointer-events-auto" data-tech="javascript">
+                            <div class="tech-card-inner">
+                                <span class="tech-icon"><i data-lucide="code" class="w-4 h-4"></i></span>
+                                <span class="tech-name">JavaScript</span>
+                            </div>
+                        </div>
+
+                        <!-- Outer Ring Tech Cards (Radius ~ 390px) -->
+                        <div class="tech-card-orbit outer-orbit-item absolute pointer-events-auto" data-tech="git">
+                            <div class="tech-card-inner">
+                                <span class="tech-icon"><i data-lucide="git-branch" class="w-4 h-4"></i></span>
+                                <span class="tech-name">Git</span>
+                            </div>
+                        </div>
+                        <div class="tech-card-orbit outer-orbit-item absolute pointer-events-auto" data-tech="aws">
+                            <div class="tech-card-inner">
+                                <span class="tech-icon"><i data-lucide="cloud" class="w-4 h-4"></i></span>
+                                <span class="tech-name">AWS</span>
+                            </div>
+                        </div>
+                        <div class="tech-card-orbit outer-orbit-item absolute pointer-events-auto" data-tech="cloudcomputing">
+                            <div class="tech-card-inner">
+                                <span class="tech-icon"><i data-lucide="server" class="w-4 h-4"></i></span>
+                                <span class="tech-name">Cloud Computing</span>
+                            </div>
+                        </div>
+                        <div class="tech-card-orbit outer-orbit-item absolute pointer-events-auto" data-tech="flutter">
+                            <div class="tech-card-inner">
+                                <span class="tech-icon"><i data-lucide="smartphone" class="w-4 h-4"></i></span>
+                                <span class="tech-name">Flutter</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Orbit Tooltip -->
+                    <div id="orbit-tooltip" class="absolute pointer-events-none opacity-0 scale-95 transition-all duration-300 z-50 py-3 px-4 rounded-xl border border-accentAmber/35 bg-[#111111]/90 backdrop-blur-md shadow-[0_0_20px_rgba(232,177,124,0.15)] flex flex-col items-center min-w-[200px] text-center">
+                        <span class="tooltip-title text-sm font-bold text-white tracking-wide"></span>
+                        <span class="tooltip-desc text-xs text-textSecondary mt-1"></span>
+                    </div>
+                </div>
+
+                <!-- Right Strengths Column (25% width) -->
+                <div class="w-full lg:w-[25%] lg:shrink-0 flex flex-col justify-center z-10">
+                    <div class="p-8 rounded-[20px] border border-white/10 bg-[#111111]/30 backdrop-blur-md shadow-[0_15px_40px_-10px_rgba(0,0,0,0.8)] floating-widget flex flex-col hover:border-accentAmber/30 transition-all duration-500">
+                        <span class="text-xs font-semibold tracking-[0.2em] text-accentAmber mb-6 uppercase block">CORE STRENGTHS</span>
+                        <div class="flex flex-col gap-5">
+                            <div class="flex items-center gap-4 py-1.5 border-b border-white/5 last:border-0 hover:translate-x-1 transition-transform duration-300">
+                                <div class="p-2 rounded-lg bg-accentAmber/5 text-accentAmber border border-accentAmber/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="code-2" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-sm font-bold text-white tracking-wide">Clean Code</span>
+                            </div>
+                            <div class="flex items-center gap-4 py-1.5 border-b border-white/5 last:border-0 hover:translate-x-1 transition-transform duration-300">
+                                <div class="p-2 rounded-lg bg-accentAmber/5 text-accentAmber border border-accentAmber/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="server" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-sm font-bold text-white tracking-wide">Backend Development</span>
+                            </div>
+                            <div class="flex items-center gap-4 py-1.5 border-b border-white/5 last:border-0 hover:translate-x-1 transition-transform duration-300">
+                                <div class="p-2 rounded-lg bg-accentAmber/5 text-accentAmber border border-accentAmber/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="webhook" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-sm font-bold text-white tracking-wide">REST API Design</span>
+                            </div>
+                            <div class="flex items-center gap-4 py-1.5 border-b border-white/5 last:border-0 hover:translate-x-1 transition-transform duration-300">
+                                <div class="p-2 rounded-lg bg-accentAmber/5 text-accentAmber border border-accentAmber/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="database" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-sm font-bold text-white tracking-wide">Database Design</span>
+                            </div>
+                            <div class="flex items-center gap-4 py-1.5 border-b border-white/5 last:border-0 hover:translate-x-1 transition-transform duration-300">
+                                <div class="p-2 rounded-lg bg-accentAmber/5 text-accentAmber border border-accentAmber/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="cloud" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-sm font-bold text-white tracking-wide">Cloud Deployment</span>
+                            </div>
+                            <div class="flex items-center gap-4 py-1.5 border-b border-white/5 last:border-0 hover:translate-x-1 transition-transform duration-300">
+                                <div class="p-2 rounded-lg bg-accentAmber/5 text-accentAmber border border-accentAmber/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="layout" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-sm font-bold text-white tracking-wide">Responsive UI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 px-6 sm:px-10 rounded-[32px] border border-white/5 bg-[#111111]/40 backdrop-blur-sm relative overflow-hidden mb-24">
+            <!-- Background Accent Light -->
+            <div class="absolute top-0 right-0 w-[300px] h-[300px] rounded-full bg-accentAmber/5 blur-[120px] pointer-events-none"></div>
+            
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-16 gap-6 relative z-10">
+                <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
+                    <div>
+                        <span class="text-xs font-semibold tracking-[0.3em] text-accentAmber mb-2 uppercase block">PROJECTS</span>
+                        <h2 class="font-syne text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">Featured Projects</h2>
+                    </div>
+                    <div class="hidden md:block w-px h-12 bg-white/10"></div>
+                    <p class="text-sm sm:text-base text-textSecondary font-light max-w-[400px]">
+                        A selection of web applications and systems I've designed and developed using Python, Django, Java, SQL and modern web technologies.
+                    </p>
+                </div>
+                
+                <a href="https://github.com/Niranjana183" target="_blank" class="magnetic-button inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider text-white border border-white/10 hover:border-accentAmber/40 bg-white/5 transition-all duration-300 group self-start md:self-auto shrink-0">
+                    View All Projects &rarr;
+                </a>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+                
+                <!-- Card 1: AutoResQ -->
+                <div class="project-grid-card group relative flex flex-col justify-between" id="autoresq-card">
+                    <!-- Browser Mockup / Main Featured Screenshot -->
+                    <div class="browser-mockup relative">
+                        <div class="browser-header">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                            <div class="browser-address">autoresq.local</div>
+                            <span class="ml-auto text-[9px] text-accentAmber/90 font-semibold px-2 py-0.5 rounded bg-accentAmber/10 border border-accentAmber/20 uppercase tracking-wider hidden sm:inline-block">Case Study</span>
+                        </div>
+                        <div class="screenshot-container group/featured cursor-pointer relative overflow-hidden" 
+                             onclick="openAutoresqLightbox()"
+                             title="Click to view full Case Study">
+                            <img src="images/autoresq/1.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/673f7a76-8389-4329-9036-b90ffaef3980/media__1785764424624.png';" 
+                                 alt="AutoResQ - Emergency Incident Reporting Platform" 
+                                 class="project-screenshot w-full h-full object-cover transition-transform duration-500 group-hover/featured:scale-105" 
+                                 loading="lazy">
+                            <!-- Overlay Zoom Hint -->
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/featured:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="px-4 py-2 rounded-full bg-accentAmber/20 border border-accentAmber/40 text-white text-xs font-semibold flex items-center gap-2 shadow-lg transform translate-y-2 group-hover/featured:translate-y-0 transition-transform duration-300">
+                                    View Project Case Study &rarr;
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-white group-hover:text-accentAmber transition-colors duration-300">AutoResQ</h3>
+                            </div>
+                            <span class="text-[11px] font-semibold text-accentAmber uppercase tracking-wider block mb-2">AI-Powered Emergency Incident Reporting & Response Platform</span>
+                            <p class="text-xs text-textSecondary leading-relaxed font-light mb-4">
+                                AutoResQ is a full-stack emergency incident reporting and response platform that enables users to report road accidents, natural disasters, and emergencies in real time.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">Python</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">Django</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">REST API</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">PostgreSQL</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">HTML</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">CSS</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">JavaScript</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">Leaflet Maps</span>
+                            </div>
+                            
+                            <div class="flex gap-2.5 project-card-buttons">
+                                <button type="button" 
+                                        onclick="openAutoresqLightbox()" 
+                                        class="flex-1 text-center py-2.5 px-3 rounded-xl text-xs font-semibold text-black bg-accentAmber hover:bg-accentAmber/90 hover:shadow-[0_0_15px_rgba(229,179,122,0.3)] transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer">
+                                    View Project &rarr;
+                                </button>
+                                <a href="https://github.com/Niranjana183/Autoresq.git" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2.5 px-3 rounded-xl text-xs font-semibold text-white border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center justify-center gap-1.5">
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: College Admission Website -->
+                <div class="project-grid-card group relative flex flex-col justify-between" id="college-admission-card">
+                    <!-- Browser Mockup / Main Featured Screenshot -->
+                    <div class="browser-mockup relative">
+                        <div class="browser-header">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                            <div class="browser-address">admissions.local</div>
+                            <span class="ml-auto text-[9px] text-accentAmber/90 font-semibold px-2 py-0.5 rounded bg-accentAmber/10 border border-accentAmber/20 uppercase tracking-wider hidden sm:inline-block">Case Study</span>
+                        </div>
+                        <div class="screenshot-container group/featured cursor-pointer relative overflow-hidden" 
+                             onclick="openCollegeLightbox()"
+                             title="Click to view full Case Study">
+                            <img src="file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/4beb59f3-0f39-493f-ba60-d9a467ed03d3/media__1785769356505.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/4beb59f3-0f39-493f-ba60-d9a467ed03d3/media__1785769356505.png';" 
+                                 alt="College Admission Website Preview" 
+                                 class="project-screenshot w-full h-full object-cover transition-transform duration-500 group-hover/featured:scale-105" 
+                                 loading="lazy">
+                            <!-- Overlay Zoom Hint -->
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/featured:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="px-4 py-2 rounded-full bg-accentAmber/20 border border-accentAmber/40 text-white text-xs font-semibold flex items-center gap-2 shadow-lg transform translate-y-2 group-hover/featured:translate-y-0 transition-transform duration-300">
+                                    View Project Case Study &rarr;
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-white group-hover:text-accentAmber transition-colors duration-300">College Admission Website</h3>
+                            </div>
+                            <span class="text-[11px] font-semibold text-accentAmber uppercase tracking-wider block mb-2">Modern Online Student Admission & Administration Portal</span>
+                            <p class="text-xs text-textSecondary leading-relaxed font-light mb-4">
+                                The College Admission Website is a full-stack admission management platform that simplifies the student admission process through an intuitive online portal.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">Python</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">Django</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">HTML</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">CSS</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">JavaScript</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">Bootstrap</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">SQL</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">AWS S3</span>
+                            </div>
+                            
+                            <div class="flex gap-2.5 project-card-buttons">
+                                <button type="button" 
+                                        onclick="openCollegeLightbox()" 
+                                        class="flex-1 text-center py-2.5 px-3 rounded-xl text-xs font-semibold text-black bg-accentAmber hover:bg-accentAmber/90 hover:shadow-[0_0_15px_rgba(229,179,122,0.3)] transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer">
+                                    View Project &rarr;
+                                </button>
+                                <a href="https://github.com/Niranjana183/Aetheria.git" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2.5 px-3 rounded-xl text-xs font-semibold text-white border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center justify-center gap-1.5">
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card 3: Mediswift - Medicine Delivery Management System -->
+                <div class="project-grid-card group relative flex flex-col justify-between" id="medicine-delivery-card">
+                    <!-- Browser Mockup / Main Featured Screenshot -->
+                    <div class="browser-mockup relative">
+                        <div class="browser-header">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                            <div class="browser-address">mediswift.local</div>
+                            <span class="ml-auto text-[9px] text-accentAmber/90 font-semibold px-2 py-0.5 rounded bg-accentAmber/10 border border-accentAmber/20 uppercase tracking-wider hidden sm:inline-block">Case Study</span>
+                        </div>
+                        <div class="screenshot-container group/featured cursor-pointer relative overflow-hidden" 
+                             onclick="openMediswiftLightbox()"
+                             title="Click to view full Case Study">
+                            <img src="images/mediswift/user_catalog.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/7a3e4d39-c322-4546-ba05-cc96ab056aab/media__1785746361533.png';" 
+                                 alt="Mediswift - Medicine Delivery Management System User Dashboard" 
+                                 class="project-screenshot w-full h-full object-cover transition-transform duration-500 group-hover/featured:scale-105" 
+                                 loading="lazy">
+                            <!-- Overlay Zoom Hint -->
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/featured:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="px-4 py-2 rounded-full bg-accentAmber/20 border border-accentAmber/40 text-white text-xs font-semibold flex items-center gap-2 shadow-lg transform translate-y-2 group-hover/featured:translate-y-0 transition-transform duration-300">
+                                    View Project Case Study &rarr;
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-white group-hover:text-accentAmber transition-colors duration-300">Mediswift-Medicine Delivery Management System</h3>
+                            </div>
+                            <span class="text-[11px] font-semibold text-accentAmber uppercase tracking-wider block mb-2">AI-Powered Healthcare & Medicine Delivery Platform</span>
+                            <p class="text-xs text-textSecondary leading-relaxed font-light mb-4">
+                                Medicine Delivery Management System is a full-stack healthcare platform that enables patients to order medicines online, upload prescriptions, and manage deliveries while giving administrators complete control over inventory, pharmacies, orders, customers, and delivery operations.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5">Python</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5">Django</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5">SQL</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5">HTML</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5">CSS</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5">JavaScript</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5">Bootstrap</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5">Gemini AI</span>
+                            </div>
+                            
+                            <div class="flex gap-2.5 project-card-buttons">
+                                <button type="button" 
+                                        onclick="openMediswiftLightbox()" 
+                                        class="flex-1 text-center py-2.5 px-3 rounded-xl text-xs font-semibold text-black bg-accentAmber hover:bg-accentAmber/90 hover:shadow-[0_0_15px_rgba(229,179,122,0.3)] transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer">
+                                    View Project &rarr;
+                                </button>
+                                <a href="https://github.com/Niranjana183/Mediswift" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2.5 px-3 rounded-xl text-xs font-semibold text-white border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center justify-center gap-1.5">
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: GBM-Engine – Laptop Rental Management System -->
+                <div class="project-grid-card group relative flex flex-col justify-between" id="gbm-engine-card">
+                    <!-- Browser Mockup / Main Featured Screenshot -->
+                    <div class="browser-mockup relative">
+                        <div class="browser-header">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                            <div class="browser-address">gbm-engine.local</div>
+                            <span class="ml-auto text-[9px] text-accentAmber/90 font-semibold px-2 py-0.5 rounded bg-accentAmber/10 border border-accentAmber/20 uppercase tracking-wider hidden sm:inline-block">Case Study</span>
+                        </div>
+                        <div class="screenshot-container group/featured cursor-pointer relative overflow-hidden" 
+                             onclick="openGbmLightbox()"
+                             title="Click to view full Case Study">
+                            <img src="file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/98655c43-561b-45e3-9eb5-6360356af0b4/media__1785827183239.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/98655c43-561b-45e3-9eb5-6360356af0b4/media__1785827183239.png';" 
+                                 alt="GBM-Engine Dashboard" 
+                                 class="project-screenshot w-full h-full object-cover transition-transform duration-500 group-hover/featured:scale-105" 
+                                 loading="lazy">
+                            <!-- Overlay Zoom Hint -->
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/featured:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="px-4 py-2 rounded-full bg-accentAmber/20 border border-accentAmber/40 text-white text-xs font-semibold flex items-center gap-2 shadow-lg transform translate-y-2 group-hover/featured:translate-y-0 transition-transform duration-300">
+                                    View Project Case Study &rarr;
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-white group-hover:text-accentAmber transition-colors duration-300">GBM-Engine</h3>
+                            </div>
+                            <span class="text-[11px] font-semibold text-accentAmber uppercase tracking-wider block mb-2">Smart Laptop Rental & Inventory Management Platform</span>
+                            <p class="text-xs text-textSecondary leading-relaxed font-light mb-4">
+                                Full-stack laptop rental and inventory management system designed to streamline the complete rental lifecycle with QR tracking and GST invoicing.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">Python</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">Django</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">PostgreSQL</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">HTML</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">CSS</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">JavaScript</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">Bootstrap</span>
+                                <span class="tech-badge px-2 py-0.5 rounded bg-white/5 text-white/80 text-[10px] font-medium tracking-wide border border-white/5 hover:border-accentAmber/30 transition-colors">Flutter</span>
+                            </div>
+                            
+                            <div class="flex gap-2.5 project-card-buttons">
+                                <button type="button" 
+                                        onclick="openGbmLightbox()" 
+                                        class="flex-1 text-center py-2.5 px-3 rounded-xl text-xs font-semibold text-black bg-accentAmber hover:bg-accentAmber/90 hover:shadow-[0_0_15px_rgba(229,179,122,0.3)] transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer">
+                                    View Project &rarr;
+                                </button>
+                                <a href="https://github.com/Niranjana183/GBM-Engine.git" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2.5 px-3 rounded-xl text-xs font-semibold text-white border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center justify-center gap-1.5">
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 border-t border-white/5 relative">
+            <!-- Glowing Accent Background -->
+            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-accentAmber/5 blur-[150px] pointer-events-none"></div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
+                <div class="lg:col-span-5">
+                    <span class="text-xs font-semibold tracking-[0.3em] text-accentAmber mb-2 uppercase block">GET IN TOUCH</span>
+                    <h2 class="font-bebas text-5xl sm:text-7xl text-white tracking-wide uppercase leading-none mb-6">LET'S BUILD<br>SOMETHING GREAT</h2>
+                    <p class="text-textSecondary font-light leading-relaxed mb-8 max-w-[400px]">
+                        Looking for a dedicated Python Developer / Django Specialist? Or want to discuss data science workflows? I'm always open to discussing new opportunities.
+                    </p>
+                    
+                    <div class="flex flex-col gap-4">
+                        <a href="mailto:niranjanakrishna.dev@gmail.com" class="flex items-center gap-3 text-white hover:text-accentAmber transition-colors duration-300">
+                            <i data-lucide="mail" class="w-5 h-5 text-accentAmber"></i>
+                            niranjanakrishna.dev@gmail.com
+                        </a>
+                        <span class="flex items-center gap-3 text-textSecondary">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-accentAmber"></i>
+                            Kerala, India
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-7">
+                    <form id="contact-form" class="p-8 sm:p-10 rounded-2xl border border-white/5 bg-[#111111]/50 backdrop-blur-md glass-card flex flex-col gap-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2 relative">
+                                <label for="name" class="text-xs font-semibold text-textSecondary uppercase tracking-wider">Your Name</label>
+                                <input type="text" id="name" name="from_name" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentAmber/50 transition-colors duration-300">
+                                <span id="name-error" class="text-red-500 text-[11px] hidden absolute -bottom-5 left-1 font-medium tracking-wide">Name is required</span>
+                            </div>
+                            <div class="flex flex-col gap-2 relative">
+                                <label for="email" class="text-xs font-semibold text-textSecondary uppercase tracking-wider">Email Address</label>
+                                <input type="email" id="email" name="reply_to" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentAmber/50 transition-colors duration-300">
+                                <span id="email-error" class="text-red-500 text-[11px] hidden absolute -bottom-5 left-1 font-medium tracking-wide">Please enter a valid email</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2 relative mt-2">
+                            <label for="message" class="text-xs font-semibold text-textSecondary uppercase tracking-wider">Message</label>
+                            <textarea id="message" name="message" rows="5" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentAmber/50 transition-colors duration-300 resize-none"></textarea>
+                            <span id="message-error" class="text-red-500 text-[11px] hidden absolute -bottom-5 left-1 font-medium tracking-wide">Message cannot be empty</span>
+                        </div>
+                        <button type="submit" id="submit-btn" class="magnetic-button mt-4 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-semibold tracking-wider text-black bg-accentAmber transition-all duration-300 hover:shadow-[0_0_30px_rgba(232,177,124,0.2)] disabled:opacity-70 disabled:cursor-not-allowed">
+                            <span id="submit-text">Send Message</span>
+                            <i data-lucide="send" id="submit-icon" class="w-4 h-4 transition-transform"></i>
+                            <div id="submit-loader" class="hidden w-4 h-4 border-2 border-black/20 border-t-black rounded-full animate-spin"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12 relative z-10 bg-[#050505]">
+        <div class="max-w-[1320px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-textSecondary">
+            <p>&copy; 2026 Niranjana Krishna. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="https://github.com/Niranjana183" target="_blank" class="hover:text-accentAmber transition-colors duration-300">GitHub</a>
+                <a href="https://www.linkedin.com/in/niranjana-krishna-139673319" target="_blank" class="hover:text-accentAmber transition-colors duration-300">LinkedIn</a>
+                <a href="mailto:niranjanakrishna.dev@gmail.com" class="hover:text-accentAmber transition-colors duration-300">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AutoResQ Case Study Modal -->
+    <div id="autoresq-lightbox" class="fixed inset-0 z-[99990] hidden opacity-0 transition-all duration-500 bg-[#050505]/95 backdrop-blur-2xl overflow-y-auto max-h-screen" data-lenis-prevent>
+        <div class="min-h-screen max-w-6xl mx-auto px-4 sm:px-8 py-8 flex flex-col justify-between relative">
+            
+            <!-- Sticky Modal Header -->
+            <div class="sticky top-4 z-50 flex items-center justify-between gap-4 py-4 px-6 rounded-2xl bg-[#050505]/90 backdrop-blur-md border border-white/10 shadow-2xl mb-8">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-xl bg-accentAmber/10 border border-accentAmber/30 text-accentAmber flex items-center justify-center shrink-0">
+                        <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base sm:text-lg font-bold text-white tracking-wide">AutoResQ</h4>
+                        <p class="text-xs text-accentAmber font-medium">AI-Powered Emergency Incident Reporting & Response Platform</p>
+                    </div>
+                </div>
+                
+                <button onclick="closeAutoresqLightbox()" 
+                        class="p-2.5 rounded-full bg-white/10 border border-white/20 text-white hover:bg-accentAmber hover:text-black hover:border-accentAmber transition-all duration-300 cursor-pointer shadow-lg flex items-center justify-center shrink-0"
+                        title="Close Case Study (Esc)">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Top Hero Section & Overview -->
+            <div class="flex flex-col gap-8 mb-16">
+                <!-- Large Hero Image Container -->
+                <div class="relative w-full rounded-3xl border border-white/10 bg-[#111111]/60 backdrop-blur-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] group">
+                    <div class="browser-header px-4 py-3 bg-black/40 border-b border-white/5 flex items-center gap-2">
+                        <span class="browser-dot red"></span>
+                        <span class="browser-dot yellow"></span>
+                        <span class="browser-dot green"></span>
+                        <div class="browser-address text-xs text-textSecondary font-mono mx-auto">autoresq.local</div>
+                        <span class="text-[10px] text-accentAmber font-mono px-2 py-0.5 rounded bg-accentAmber/10 border border-accentAmber/20">Dashboard Hero</span>
+                    </div>
+                    <div class="relative overflow-hidden aspect-[16/9] sm:aspect-[21/9]">
+                        <img src="images/autoresq/1.png" 
+                             onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/673f7a76-8389-4329-9036-b90ffaef3980/media__1785764424624.png';" 
+                             alt="AutoResQ Dashboard" 
+                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-102">
+                    </div>
+                </div>
+
+                <!-- Project Overview & Tech Stack -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl">
+                    <div class="lg:col-span-8 flex flex-col gap-4">
+                        <span class="text-xs font-semibold tracking-[0.2em] text-accentAmber uppercase">PROJECT OVERVIEW</span>
+                        <p class="text-sm sm:text-base text-textSecondary leading-relaxed font-light">
+                            AutoResQ is a full-stack emergency incident reporting and response platform that enables users to report road accidents, natural disasters, and emergencies in real time. The platform provides location-based incident reporting, interactive maps, emergency alerts, and an administrator dashboard for monitoring and coordinating responses.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-4 flex flex-col gap-3">
+                        <span class="text-xs font-semibold tracking-[0.2em] text-accentAmber uppercase">TECH STACK</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">Python</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">Django</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">REST API</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">PostgreSQL</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">HTML</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">CSS</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">JavaScript</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-accentAmber/10 border border-accentAmber/30 text-accentAmber">Leaflet Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Grid Badges -->
+                <div class="flex flex-col gap-4">
+                    <span class="text-xs font-semibold tracking-[0.2em] text-accentAmber uppercase">KEY SYSTEM FEATURES</span>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Secure Authentication</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Emergency Incident Reporting</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Interactive Maps</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Live Location Tracking</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">REST API Integration</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Incident Dashboard</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Admin Panel</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Status Updates</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">PostgreSQL Database</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshot Timeline Section (Case Study Journey) -->
+            <div class="flex flex-col gap-12 mb-16">
+                <div class="flex flex-col items-center text-center gap-2 mb-4">
+                    <span class="text-xs font-semibold tracking-[0.3em] text-accentAmber uppercase">SYSTEM WORKFLOW JOURNEY</span>
+                    <h3 class="font-syne text-2xl sm:text-3xl font-bold text-white">End-to-End Platform Experience</h3>
+                </div>
+
+                <!-- Step 1 (Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-7">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="images/autoresq/2.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/673f7a76-8389-4329-9036-b90ffaef3980/media__1785764443751.png';" 
+                                 alt="Join AutoResque - Roles" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col gap-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            01
+                        </span>
+                        <h4 class="text-xl font-bold text-white">1. Join AutoResque</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            Users can sign up seamlessly as a Driver or Mechanic to either get fast roadside assistance or join the network to receive job requests instantly.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 (Text Left, Image Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-5 flex flex-col gap-3 order-2 lg:order-1">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            02
+                        </span>
+                        <h4 class="text-xl font-bold text-white">2. Request Assistance</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            Quickly request help by selecting the issue type (like Tyre Puncture, Battery Dead, Towing, or Engine Trouble) and automatically sending GPS location for accurate response.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 order-1 lg:order-2">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="images/autoresq/3.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/673f7a76-8389-4329-9036-b90ffaef3980/media__1785764451899.png';" 
+                                 alt="Request Assistance" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 (Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-7">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="images/autoresq/4.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/673f7a76-8389-4329-9036-b90ffaef3980/media__1785764457579.png';" 
+                                 alt="Admin Dashboard" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col gap-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            03
+                        </span>
+                        <h4 class="text-xl font-bold text-white">3. Admin Dashboard</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            A comprehensive administration panel to oversee total drivers, mechanics, incoming requests, active jobs, and approve new user registrations.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Close CTA -->
+            <div class="flex items-center justify-center py-8">
+                <button onclick="closeAutoresqLightbox()" 
+                        class="px-8 py-3 rounded-full bg-accentAmber text-black font-semibold text-xs uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_25px_rgba(232,177,124,0.3)] transition-all duration-300 cursor-pointer">
+                    Back to Portfolio
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Mediswift Case Study Modal -->
+    <div id="mediswift-lightbox" class="fixed inset-0 z-[99990] hidden opacity-0 transition-all duration-500 bg-[#050505]/95 backdrop-blur-2xl overflow-y-auto max-h-screen" data-lenis-prevent>
+        <div class="min-h-screen max-w-6xl mx-auto px-4 sm:px-8 py-8 flex flex-col justify-between relative">
+            
+            <!-- Sticky Modal Header -->
+            <div class="sticky top-4 z-50 flex items-center justify-between gap-4 py-4 px-6 rounded-2xl bg-[#050505]/90 backdrop-blur-md border border-white/10 shadow-2xl mb-8">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-xl bg-accentAmber/10 border border-accentAmber/30 text-accentAmber flex items-center justify-center shrink-0">
+                        <i data-lucide="pill" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base sm:text-lg font-bold text-white tracking-wide">Mediswift-Medicine Delivery Management System</h4>
+                        <p class="text-xs text-accentAmber font-medium">AI-Powered Healthcare & Medicine Delivery Platform</p>
+                    </div>
+                </div>
+                
+                <button onclick="closeMediswiftLightbox()" 
+                        class="p-2.5 rounded-full bg-white/10 border border-white/20 text-white hover:bg-accentAmber hover:text-black hover:border-accentAmber transition-all duration-300 cursor-pointer shadow-lg flex items-center justify-center shrink-0"
+                        title="Close Case Study (Esc)">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Top Hero Section & Overview -->
+            <div class="flex flex-col gap-8 mb-16">
+                <!-- Large Hero Image Container -->
+                <div class="relative w-full rounded-3xl border border-white/10 bg-[#111111]/60 backdrop-blur-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] group">
+                    <div class="browser-header px-4 py-3 bg-black/40 border-b border-white/5 flex items-center gap-2">
+                        <span class="browser-dot red"></span>
+                        <span class="browser-dot yellow"></span>
+                        <span class="browser-dot green"></span>
+                        <div class="browser-address text-xs text-textSecondary font-mono mx-auto">mediswift.local/catalog</div>
+                        <span class="text-[10px] text-accentAmber font-mono px-2 py-0.5 rounded bg-accentAmber/10 border border-accentAmber/20">User Dashboard Hero</span>
+                    </div>
+                    <div class="relative overflow-hidden aspect-[16/9] sm:aspect-[21/9]">
+                        <img src="images/mediswift/user_catalog.png" 
+                             onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/7a3e4d39-c322-4546-ba05-cc96ab056aab/media__1785746361533.png';" 
+                             alt="Mediswift User Dashboard Catalog" 
+                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-102">
+                    </div>
+                </div>
+
+                <!-- Project Overview & Tech Stack -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl">
+                    <div class="lg:col-span-8 flex flex-col gap-4">
+                        <span class="text-xs font-semibold tracking-[0.2em] text-accentAmber uppercase">PROJECT OVERVIEW</span>
+                        <p class="text-sm sm:text-base text-textSecondary leading-relaxed font-light">
+                            Medicine Delivery Management System is a full-stack healthcare platform that enables patients to order medicines online, upload prescriptions, and manage deliveries while giving administrators complete control over inventory, pharmacies, orders, customers, and delivery operations.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-4 flex flex-col gap-3">
+                        <span class="text-xs font-semibold tracking-[0.2em] text-accentAmber uppercase">TECH STACK</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">Python</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">Django</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">SQL</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">HTML</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">CSS</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">JavaScript</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">Bootstrap</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-accentAmber/10 border border-accentAmber/30 text-accentAmber">Gemini AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Grid Badges -->
+                <div class="flex flex-col gap-4">
+                    <span class="text-xs font-semibold tracking-[0.2em] text-accentAmber uppercase">KEY SYSTEM FEATURES</span>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Secure Authentication</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Medicine Catalog</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Smart Search</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Shopping Cart</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Prescription Upload</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">AI Prescription Recognition</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Order Tracking</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Inventory Management</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Admin Dashboard</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Pharmacy Management</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Customer Management</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Delivery Partner Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshot Timeline Section (Case Study Journey - 7 Steps in exact order) -->
+            <div class="flex flex-col gap-12 mb-16">
+                <div class="flex flex-col items-center text-center gap-2 mb-4">
+                    <span class="text-xs font-semibold tracking-[0.3em] text-accentAmber uppercase">SYSTEM WORKFLOW JOURNEY</span>
+                    <h3 class="font-syne text-2xl sm:text-3xl font-bold text-white">End-to-End Platform Experience</h3>
+                </div>
+
+                <!-- Step 1: User Login (Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-7">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="images/mediswift/user_login.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/7a3e4d39-c322-4546-ba05-cc96ab056aab/media__1785746354043.png';" 
+                                 alt="User Login" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col gap-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            01
+                        </span>
+                        <h4 class="text-xl font-bold text-white">1. User Login</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            Secure authentication for customers to access the medicine delivery platform.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2: User Dashboard / Medicine Catalog (Text Left, Image Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-5 flex flex-col gap-3 order-2 lg:order-1">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            02
+                        </span>
+                        <h4 class="text-xl font-bold text-white">2. User Dashboard / Medicine Catalog</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            Browse medicines, search products, filter pharmacies, and add medicines to the shopping cart.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 order-1 lg:order-2">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="images/mediswift/user_catalog.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/7a3e4d39-c322-4546-ba05-cc96ab056aab/media__1785746361533.png';" 
+                                 alt="User Dashboard / Medicine Catalog" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Shopping Cart (Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-7">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="images/mediswift/shopping_cart.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/7a3e4d39-c322-4546-ba05-cc96ab056aab/media__1785746368850.png';" 
+                                 alt="Shopping Cart" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col gap-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            03
+                        </span>
+                        <h4 class="text-xl font-bold text-white">3. Shopping Cart</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            Review selected medicines, view pricing, delivery charges, and place medical orders.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4: Prescription Upload (AI) (Text Left, Image Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-5 flex flex-col gap-3 order-2 lg:order-1">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            04
+                        </span>
+                        <h4 class="text-xl font-bold text-white">4. Prescription Upload (AI)</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            Upload prescriptions for AI-assisted medicine recognition and automatic cart preparation.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 order-1 lg:order-2">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="images/mediswift/prescription_ai_scan.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/7a3e4d39-c322-4546-ba05-cc96ab056aab/media__1785746381178.png';" 
+                                 alt="Prescription Upload (AI)" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Orders (Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-7">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="images/mediswift/prescription_orders.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/7a3e4d39-c322-4546-ba05-cc96ab056aab/media__1785746374694.png';" 
+                                 alt="Orders" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col gap-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            05
+                        </span>
+                        <h4 class="text-xl font-bold text-white">5. Orders</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            Track prescription orders and monitor delivery status from the user dashboard.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 6: Admin Login (Text Left, Image Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-5 flex flex-col gap-3 order-2 lg:order-1">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            06
+                        </span>
+                        <h4 class="text-xl font-bold text-white">6. Admin Login</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            Separate administrator authentication for secure system management.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 order-1 lg:order-2">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="images/mediswift/admin_login.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/7a3e4d39-c322-4546-ba05-cc96ab056aab/media__1785745207087.png';" 
+                                 alt="Admin Login" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 7: Admin Dashboard (Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-7">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="images/mediswift/admin_dashboard.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/7a3e4d39-c322-4546-ba05-cc96ab056aab/media__1785745207331.png';" 
+                                 alt="Admin Dashboard" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col gap-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            07
+                        </span>
+                        <h4 class="text-xl font-bold text-white">7. Admin Dashboard</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            Centralized admin dashboard for medicine inventory, order management, stock monitoring, customers, pharmacy owners, and delivery partners.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Close CTA -->
+            <div class="flex items-center justify-center py-8">
+                <button onclick="closeMediswiftLightbox()" 
+                        class="px-8 py-3 rounded-full bg-accentAmber text-black font-semibold text-xs uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_25px_rgba(232,177,124,0.3)] transition-all duration-300 cursor-pointer">
+                    Back to Portfolio
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- College Admission Case Study Modal -->
+    <div id="college-admission-lightbox" class="fixed inset-0 z-[99990] hidden opacity-0 transition-all duration-500 bg-[#050505]/95 backdrop-blur-2xl overflow-y-auto max-h-screen" data-lenis-prevent>
+        <div class="min-h-screen max-w-6xl mx-auto px-4 sm:px-8 py-8 flex flex-col justify-between relative">
+            
+            <!-- Sticky Modal Header -->
+            <div class="sticky top-4 z-50 flex items-center justify-between gap-4 py-4 px-6 rounded-2xl bg-[#050505]/90 backdrop-blur-md border border-white/10 shadow-2xl mb-8">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-xl bg-accentAmber/10 border border-accentAmber/30 text-accentAmber flex items-center justify-center shrink-0">
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base sm:text-lg font-bold text-white tracking-wide">College Admission Website</h4>
+                        <p class="text-xs text-accentAmber font-medium">Modern Online Student Admission & Administration Portal</p>
+                    </div>
+                </div>
+                
+                <button onclick="closeCollegeLightbox()" 
+                        class="p-2.5 rounded-full bg-white/10 border border-white/20 text-white hover:bg-accentAmber hover:text-black hover:border-accentAmber transition-all duration-300 cursor-pointer shadow-lg flex items-center justify-center shrink-0"
+                        title="Close Case Study (Esc)">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Top Hero Section & Overview -->
+            <div class="flex flex-col gap-8 mb-16">
+                <!-- Large Hero Image Container -->
+                <div class="relative w-full rounded-3xl border border-white/10 bg-[#111111]/60 backdrop-blur-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] group">
+                    <div class="browser-header px-4 py-3 bg-black/40 border-b border-white/5 flex items-center gap-2">
+                        <span class="browser-dot red"></span>
+                        <span class="browser-dot yellow"></span>
+                        <span class="browser-dot green"></span>
+                        <div class="browser-address text-xs text-textSecondary font-mono mx-auto">admissions.local/home</div>
+                        <span class="text-[10px] text-accentAmber font-mono px-2 py-0.5 rounded bg-accentAmber/10 border border-accentAmber/20">Homepage Hero</span>
+                    </div>
+                    <div class="relative overflow-hidden aspect-[16/9] sm:aspect-[21/9]">
+                        <img src="file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/4beb59f3-0f39-493f-ba60-d9a467ed03d3/media__1785771986082.png" 
+                             onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/4beb59f3-0f39-493f-ba60-d9a467ed03d3/media__1785771986082.png';" 
+                             alt="College Admission Homepage Hero" 
+                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-102">
+                    </div>
+                </div>
+
+                <!-- Project Overview & Tech Stack -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl">
+                    <div class="lg:col-span-8 flex flex-col gap-4">
+                        <span class="text-xs font-semibold tracking-[0.2em] text-accentAmber uppercase">PROJECT OVERVIEW</span>
+                        <p class="text-sm sm:text-base text-textSecondary leading-relaxed font-light">
+                            The College Admission Website is a full-stack admission management platform that simplifies the student admission process through an intuitive online portal. Students can register, submit applications, upload required documents, and track their admission status, while administrators efficiently manage applications, verify documents, and oversee the complete admission workflow through a centralized dashboard.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-4 flex flex-col gap-3">
+                        <span class="text-xs font-semibold tracking-[0.2em] text-accentAmber uppercase">TECH STACK</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">Python</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">Django</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">HTML</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">CSS</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">JavaScript</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">Bootstrap</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">SQL</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-accentAmber/10 border border-accentAmber/30 text-accentAmber">AWS S3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Grid Badges -->
+                <div class="flex flex-col gap-4">
+                    <span class="text-xs font-semibold tracking-[0.2em] text-accentAmber uppercase">KEY SYSTEM FEATURES</span>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Student Registration</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Secure Login & Auth</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Online Admission Form</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Document Upload</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Application Tracking</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Admin Dashboard</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Student Management</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Application Verification</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Responsive Design</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">AWS S3 File Storage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshot Timeline Section (Case Study Journey) -->
+            <div class="flex flex-col gap-12 mb-16">
+                <div class="flex flex-col items-center text-center gap-2 mb-4">
+                    <span class="text-xs font-semibold tracking-[0.3em] text-accentAmber uppercase">SYSTEM WORKFLOW JOURNEY</span>
+                    <h3 class="font-syne text-2xl sm:text-3xl font-bold text-white">End-to-End Platform Experience</h3>
+                </div>
+
+                <!-- Step 1 (Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-7">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/4beb59f3-0f39-493f-ba60-d9a467ed03d3/media__1785771993210.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/4beb59f3-0f39-493f-ba60-d9a467ed03d3/media__1785771993210.png';" 
+                                 alt="Student Registration & Authentication" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col gap-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            01
+                        </span>
+                        <h4 class="text-xl font-bold text-white">1. Student Registration & Authentication</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            Students can create a secure account, log in with authentication, and begin their personalized admission journey.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 (Text Left, Image Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-5 flex flex-col gap-3 order-2 lg:order-1">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            02
+                        </span>
+                        <h4 class="text-xl font-bold text-white">2. Online Admission Form & Document Upload</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            An intuitive, multi-step online admission form allows applicants to submit their credentials and securely upload required documents via AWS S3 integration.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 order-1 lg:order-2">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/4beb59f3-0f39-493f-ba60-d9a467ed03d3/media__1785772012116.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/4beb59f3-0f39-493f-ba60-d9a467ed03d3/media__1785772012116.png';" 
+                                 alt="Online Admission Form" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 (Image Left, Text Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-7">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/4beb59f3-0f39-493f-ba60-d9a467ed03d3/media__1785772019789.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/4beb59f3-0f39-493f-ba60-d9a467ed03d3/media__1785772019789.png';" 
+                                 alt="Application Tracking & Management" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col gap-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            03
+                        </span>
+                        <h4 class="text-xl font-bold text-white">3. Application Tracking & Course Selection</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            Students can track the real-time status of their application, browse available academic programs, and modify course selections during the enrollment window.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 (Text Left, Image Right) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                    <div class="lg:col-span-5 flex flex-col gap-3 order-2 lg:order-1">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                            04
+                        </span>
+                        <h4 class="text-xl font-bold text-white">4. Administrator Verification & Dashboard</h4>
+                        <p class="text-sm text-textSecondary leading-relaxed font-light">
+                            Administrators access a centralized dashboard to review student management operations, verify uploaded documents, handle application approvals, and oversee the entire workflow.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 order-1 lg:order-2">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                            <img src="file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/4beb59f3-0f39-493f-ba60-d9a467ed03d3/media__1785772025746.png" 
+                                 onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/4beb59f3-0f39-493f-ba60-d9a467ed03d3/media__1785772025746.png';" 
+                                 alt="Administrator Dashboard" 
+                                 class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Close CTA -->
+            <div class="flex items-center justify-center py-8">
+                <button onclick="closeCollegeLightbox()" 
+                        class="px-8 py-3 rounded-full bg-accentAmber text-black font-semibold text-xs uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_25px_rgba(232,177,124,0.3)] transition-all duration-300 cursor-pointer">
+                    Back to Portfolio
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Custom Cursor (Rendered at Root End of Body for Top Stacking Context) -->
+    <div id="custom-cursor" class="custom-cursor-dot"></div>
+    <div id="custom-follower" class="custom-cursor-follower"></div>
+
+    <!-- GSAP Smooth Scroll, Lenis, SplitType & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="app.js"></script>
+    <!-- GBM-Engine Case Study Modal -->
+    <div id="gbm-lightbox" class="fixed inset-0 z-[99990] hidden opacity-0 transition-all duration-500 bg-[#050505]/95 backdrop-blur-2xl overflow-y-auto max-h-screen" data-lenis-prevent>
+        <div class="min-h-screen max-w-6xl mx-auto px-4 sm:px-8 py-8 flex flex-col justify-between relative">
+            
+            <!-- Sticky Modal Header -->
+            <div class="sticky top-4 z-50 flex items-center justify-between gap-4 py-4 px-6 rounded-2xl bg-[#050505]/90 backdrop-blur-md border border-white/10 shadow-2xl mb-8">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-xl bg-accentAmber/10 border border-accentAmber/30 text-accentAmber flex items-center justify-center shrink-0">
+                        <i data-lucide="laptop" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base sm:text-lg font-bold text-white tracking-wide">GBM-Engine</h4>
+                        <p class="text-xs text-accentAmber font-medium">Smart Laptop Rental & Inventory Management Platform</p>
+                    </div>
+                </div>
+                
+                <button onclick="closeGbmLightbox()" 
+                        class="p-2.5 rounded-full bg-white/10 border border-white/20 text-white hover:bg-accentAmber hover:text-black hover:border-accentAmber transition-all duration-300 cursor-pointer shadow-lg flex items-center justify-center shrink-0"
+                        title="Close Case Study (Esc)">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Top Hero Section & Overview -->
+            <div class="flex flex-col gap-8 mb-16">
+                <!-- Large Hero Image Container -->
+                <div class="relative w-full rounded-3xl border border-white/10 bg-[#111111]/60 backdrop-blur-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] group">
+                    <div class="browser-header px-4 py-3 bg-black/40 border-b border-white/5 flex items-center gap-2">
+                        <span class="browser-dot red"></span>
+                        <span class="browser-dot yellow"></span>
+                        <span class="browser-dot green"></span>
+                        <div class="browser-address text-xs text-textSecondary font-mono mx-auto">gbm-engine.local</div>
+                        <span class="text-[10px] text-accentAmber font-mono px-2 py-0.5 rounded bg-accentAmber/10 border border-accentAmber/20">Dashboard Hero</span>
+                    </div>
+                    <div class="relative overflow-hidden aspect-[16/9] sm:aspect-[21/9]">
+                        <img src="file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/98655c43-561b-45e3-9eb5-6360356af0b4/media__1785827183239.png" 
+                             onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/98655c43-561b-45e3-9eb5-6360356af0b4/media__1785827183239.png';" 
+                             alt="GBM-Engine Dashboard" 
+                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-102">
+                    </div>
+                </div>
+
+                <!-- Project Overview & Tech Stack -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl">
+                    <div class="lg:col-span-8 flex flex-col gap-4">
+                        <span class="text-xs font-semibold tracking-[0.2em] text-accentAmber uppercase">PROJECT OVERVIEW</span>
+                        <p class="text-sm sm:text-base text-textSecondary leading-relaxed font-light">
+                            GBM-Engine is a full-stack laptop rental and inventory management system designed to streamline the complete rental lifecycle. The platform enables administrators to manage laptop inventory, customer rentals, QR code-based asset tracking, GST invoice generation, rental history, and real-time stock monitoring through a modern administrative dashboard. It also includes a Flutter mobile application for enhanced accessibility.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-4 flex flex-col gap-3">
+                        <span class="text-xs font-semibold tracking-[0.2em] text-accentAmber uppercase">TECH STACK</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">Python</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">Django</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">PostgreSQL</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">HTML</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">CSS</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">JavaScript</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white">Bootstrap</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-accentAmber/10 border border-accentAmber/30 text-accentAmber">Flutter</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-accentAmber/10 border border-accentAmber/30 text-accentAmber">QR Code</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Grid Badges -->
+                <div class="flex flex-col gap-4">
+                    <span class="text-xs font-semibold tracking-[0.2em] text-accentAmber uppercase">KEY SYSTEM FEATURES</span>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Secure Authentication</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Laptop Inventory Management</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Rental Booking System</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Customer Management</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">QR Code Asset Tracking</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">GST Invoice Generation</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Rental History</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Real-Time Stock Monitoring</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Flutter Mobile App</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Admin Dashboard</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">PostgreSQL Database</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-white/10 bg-white/5 flex items-center gap-2.5 hover:border-accentAmber/40 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-medium text-white">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screenshot Timeline Section (Case Study Journey) -->
+                <div class="flex flex-col gap-12 mb-16">
+                    <div class="flex flex-col items-center text-center gap-2 mb-4">
+                        <span class="text-xs font-semibold tracking-[0.3em] text-accentAmber uppercase">SYSTEM WORKFLOW JOURNEY</span>
+                        <h3 class="font-syne text-2xl sm:text-3xl font-bold text-white">End-to-End Platform Experience</h3>
+                    </div>
+
+                    <!-- Step 1: Admin Dashboard (Image Left, Text Right) -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                        <div class="lg:col-span-7">
+                            <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                                <img src="file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/98655c43-561b-45e3-9eb5-6360356af0b4/media__1785827183239.png" 
+                                     onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/98655c43-561b-45e3-9eb5-6360356af0b4/media__1785827183239.png';" 
+                                     alt="Admin Dashboard" 
+                                     class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 flex flex-col gap-3">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                                01
+                            </span>
+                            <h4 class="text-xl font-bold text-white">1. Admin Dashboard</h4>
+                            <p class="text-sm text-textSecondary leading-relaxed font-light">
+                                Comprehensive real-time dashboard displaying key metrics such as total laptops, active rentals, maintenance alerts, overdue items, and revenue statistics.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: System Management (Text Left, Image Right) -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#111111]/40 backdrop-blur-xl group hover:border-accentAmber/30 transition-all duration-500">
+                        <div class="lg:col-span-5 flex flex-col gap-3 order-2 lg:order-1">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-accentAmber/10 border border-accentAmber/30 text-accentAmber w-fit">
+                                02
+                            </span>
+                            <h4 class="text-xl font-bold text-white">2. System Management</h4>
+                            <p class="text-sm text-textSecondary leading-relaxed font-light">
+                                Robust backend management interfaces for handling laptop inventory, rental processing, maintenance tracking, and user authorizations seamlessly.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-7 order-1 lg:order-2">
+                            <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
+                                <img src="file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/98655c43-561b-45e3-9eb5-6360356af0b4/media__1785827183253.png" 
+                                     onerror="this.onerror=null; this.src='file:///C:/Users/NIRANJANA%20KRISHNA/.gemini/antigravity-ide/brain/98655c43-561b-45e3-9eb5-6360356af0b4/media__1785827183253.png';" 
+                                     alt="System Management" 
+                                     class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer Close CTA -->
+                <div class="flex items-center justify-center py-8">
+                    <button onclick="closeGbmLightbox()" 
+                            class="px-8 py-3 rounded-full bg-accentAmber text-black font-semibold text-xs uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_25px_rgba(232,177,124,0.3)] transition-all duration-300 cursor-pointer">
+                        Back to Portfolio
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-[99999] flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- EmailJS SDK -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</body>
+</html>

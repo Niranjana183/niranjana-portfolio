@@ -1,0 +1,474 @@
+/* Custom Fonts & Base Settings */
+html {
+    scroll-behavior: initial; /* Required for Lenis smooth scroll */
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #050505;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #E8B17C;
+}
+
+/* Custom Cursor Elements */
+#custom-cursor, #custom-follower {
+    pointer-events: none !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    opacity: 1;
+    visibility: visible;
+}
+
+#custom-cursor {
+    width: 8px;
+    height: 8px;
+    background-color: #E8B17C;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none !important;
+    z-index: 99999999 !important;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+#custom-follower {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(232, 177, 124, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none !important;
+    z-index: 99999998 !important;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s;
+}
+
+/* Hide standard browser cursor everywhere on fine pointers */
+@media (pointer: fine) {
+    *, html, body, a, button, input, textarea, select, img, div, span, p, h1, h2, h3, h4, h5, h6, #mediswift-lightbox, #mediswift-lightbox * {
+        cursor: none !important;
+    }
+}
+
+/* Active Hover States for Cursor */
+.cursor-hover #custom-cursor {
+    width: 4px;
+    height: 4px;
+    background-color: #ffffff;
+}
+
+.cursor-hover #custom-follower {
+    width: 56px;
+    height: 56px;
+    border-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Lens smooth-scroll class */
+html.lenis, html.lenis body {
+    height: auto;
+}
+.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+.lenis-stopped {
+    overflow: hidden;
+}
+
+/* Custom Radial Glow Background */
+.bg-radial-glow {
+    background: radial-gradient(circle, rgba(232, 177, 124, 0.15) 0%, rgba(232, 177, 124, 0) 70%);
+}
+
+/* Stroke Text (James Holt / Druk Inspired Editorial Font) */
+.stroke-text {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+    color: transparent;
+    transition: -webkit-text-stroke 0.5s ease, color 0.5s ease;
+}
+.stroke-text:hover {
+    -webkit-text-stroke: 1px rgba(232, 177, 124, 0.8);
+    color: #E8B17C;
+}
+
+/* Glassmorphism generic style */
+.glass-card {
+    background: rgba(17, 17, 17, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.7);
+}
+
+/* Custom Navigation Link line animation */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: #E8B17C;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Interactive spotlight follow style for project cards */
+.project-card {
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+    will-change: transform;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+
+.project-card-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        350px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+        rgba(232, 177, 124, 0.08) 0%,
+        transparent 80%
+    );
+    z-index: 1;
+}
+
+/* SplitType Character Animation Classes */
+.char {
+    display: inline-block;
+    will-change: transform;
+}
+
+/* Hover rotation effects */
+.project-card:hover i[data-lucide] {
+    transform: rotate(15deg) scale(1.1);
+}
+.project-card i[data-lucide] {
+    transition: transform 0.4s ease;
+}
+
+/* Floating widget keyframe fallback for pure CSS support */
+@keyframes slow-float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(0.5deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.floating-widget {
+    animation: slow-float 6s ease-in-out infinite;
+}
+
+/* Responsive adjustment updates */
+@media (max-width: 1024px) {
+    #custom-cursor, #custom-follower {
+        display: none !important;
+    }
+    body {
+        cursor: auto !important;
+    }
+}
+
+/* Hide scrollbars for sliders */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* --- Premium Technology Orbit Styles --- */
+.tech-editorial-title {
+    font-family: 'Neue Montreal Black', 'Helvetica Now Display Black', 'PP Neue Machina', 'Neue Montreal', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 900;
+    line-height: 0.88;
+    letter-spacing: -2px;
+    font-size: clamp(52px, 8vw, 80px);
+}
+
+@media (min-width: 1024px) {
+    .tech-editorial-title {
+        font-size: 100px;
+        letter-spacing: -4px;
+    }
+}
+
+/* Orbit Scaling & Layout Wrapper */
+.orbit-wrapper {
+    will-change: transform;
+}
+
+/* Orbital rings styling */
+.orbital-ring {
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px dashed rgba(232, 177, 124, 0.12);
+}
+.orbital-ring-inner {
+    width: 552px;
+    height: 552px;
+}
+.orbital-ring-middle {
+    width: 744px;
+    height: 744px;
+}
+.orbital-ring-outer {
+    width: 936px;
+    height: 936px;
+}
+
+/* Python glass center sphere */
+.python-center-sphere {
+    width: 270px;
+    height: 270px;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+}
+.python-center-sphere:hover {
+    transform: scale(1.05);
+}
+
+.tech-card-orbit {
+    position: absolute;
+    transform-origin: center;
+    z-index: 10;
+}
+
+/* Floating technology cards */
+.tech-card-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 20px;
+    background: rgba(11, 11, 11, 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(232, 177, 124, 0.08);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    white-space: nowrap;
+}
+
+.tech-card-inner .tech-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    color: #E8B17C;
+    transition: transform 0.4s ease;
+}
+
+.tech-card-inner .tech-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Hover Effects on cards */
+.tech-card-orbit:hover .tech-card-inner {
+    border-color: rgba(232, 177, 124, 0.6);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(232, 177, 124, 0.4);
+}
+
+.tech-card-orbit:hover .tech-icon {
+    transform: scale(1.15) rotate(8deg);
+}
+
+/* Slow continuous float fallback / background float animation */
+@keyframes tech-float-subtle {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.tech-card-orbit .tech-card-inner {
+    animation: tech-float-subtle 5s ease-in-out infinite;
+}
+
+/* Specific floating animation delays so they look organic */
+.tech-card-orbit:nth-child(even) .tech-card-inner {
+    animation-duration: 6s;
+    animation-delay: -1.5s;
+}
+.tech-card-orbit:nth-child(3n) .tech-card-inner {
+    animation-duration: 7s;
+    animation-delay: -3s;
+}
+
+/* Vignette Background styles */
+.bg-radial-vignette {
+    background: radial-gradient(circle, transparent 40%, rgba(5, 5, 5, 0.8) 100%);
+}
+
+/* Custom Tooltip styling */
+#orbit-tooltip {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(232, 177, 124, 0.2);
+}
+
+/* --- Premium Project Grid & Glassmorphism Cards --- */
+.project-grid-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(229, 179, 122, 0.12);
+    border-radius: 26px;
+    transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 400ms ease, 
+                box-shadow 400ms ease;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+}
+
+.project-grid-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(229, 179, 122, 0.4);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 25px rgba(229, 179, 122, 0.15);
+}
+
+/* Browser Mockup inside card */
+.browser-mockup {
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.browser-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background: rgba(21, 21, 21, 0.6);
+}
+
+.browser-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.browser-dot.red { background-color: rgba(239, 68, 68, 0.6); }
+.browser-dot.yellow { background-color: rgba(234, 179, 8, 0.6); }
+.browser-dot.green { background-color: rgba(34, 197, 94, 0.6); }
+
+.browser-address {
+    height: 16px;
+    flex-grow: 1;
+    max-width: 120px;
+    margin: 0 auto;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Screenshot styling and zoom on hover */
+.screenshot-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.project-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-grid-card:hover .project-screenshot {
+    transform: scale(1.05);
+}
+
+/* Tech Badges stagger upward individually */
+.tech-badge {
+    display: inline-block;
+    transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 300ms ease, 
+                background-color 300ms ease;
+    will-change: transform;
+}
+
+.project-grid-card:hover .tech-badge {
+    transform: translateY(-4px);
+}
+
+/* Individual transition delays for staggered badge upward animation */
+.project-grid-card:hover .tech-badge:nth-child(1) { transition-delay: 0ms; }
+.project-grid-card:hover .tech-badge:nth-child(2) { transition-delay: 50ms; }
+.project-grid-card:hover .tech-badge:nth-child(3) { transition-delay: 100ms; }
+.project-grid-card:hover .tech-badge:nth-child(4) { transition-delay: 150ms; }
+.project-grid-card:hover .tech-badge:nth-child(5) { transition-delay: 200ms; }
+
+/* Action Buttons fade-in hover behavior */
+.project-card-buttons {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(5px);
+    transition: opacity 400ms ease, transform 400ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-grid-card:hover .project-card-buttons {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* Mobile & Tablet Usability Override */
+@media (max-width: 1023px) {
+    .project-card-buttons {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: translateY(0) !important;
+    }
+}
+
