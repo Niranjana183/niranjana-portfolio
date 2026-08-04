@@ -472,3 +472,62 @@ html.lenis, html.lenis body {
     }
 }
 
+/* --- Mobile Performance Optimizations --- */
+@media (max-width: 768px) {
+    /* Disable expensive floating animations */
+    .floating-widget, .tech-card-inner {
+        animation: none !important;
+        transform: translate3d(0,0,0) !important;
+    }
+
+    /* Reduce expensive blurs and glows */
+    .glass-card, .project-grid-card, .tech-card-inner {
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+    }
+    
+    .bg-radial-glow {
+        opacity: 0.15 !important;
+        background: radial-gradient(circle, rgba(232, 177, 124, 0.1) 0%, rgba(232, 177, 124, 0) 50%);
+    }
+
+    /* Reduce shadow intensity */
+    .project-grid-card, .glass-card {
+        box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .project-grid-card:hover {
+        transform: none !important;
+        box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.5) !important;
+        border-color: rgba(229, 179, 122, 0.12) !important;
+    }
+
+    /* Disable scale effects on images/cards on hover (prevent repaint on touch) */
+    .project-grid-card:hover .project-screenshot {
+        transform: none !important;
+    }
+    
+    .project-grid-card:hover .tech-badge {
+        transform: none !important;
+    }
+}
+
+/* --- Disable Custom Cursor entirely on touch devices --- */
+@media (hover: none) and (pointer: coarse) {
+    #custom-cursor, #custom-follower {
+        display: none !important;
+    }
+    *, html, body, a, button, input, textarea, select {
+        cursor: auto !important;
+    }
+}
+
+/* --- Respect Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

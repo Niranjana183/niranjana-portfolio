@@ -1,6 +1,11 @@
 // Initialize Lucide Icons
 lucide.createIcons();
 
+// Mobile and Touch Detection
+const isMobile = () => window.innerWidth <= 768;
+const isTouch = () => window.matchMedia("(pointer: coarse)").matches;
+const durationScale = (val) => isMobile() ? val * 0.6 : val;
+
 // Lenis Smooth Scroll Configuration
 const lenis = new Lenis({
     duration: 1.2,
@@ -41,6 +46,7 @@ let followerX = mouseX;
 let followerY = mouseY;
 
 window.addEventListener('mousemove', (e) => {
+    if (isTouch()) return; // Disable custom cursor on touch
     mouseX = e.clientX;
     mouseY = e.clientY;
     
@@ -62,6 +68,7 @@ window.addEventListener('mousemove', (e) => {
 
 // Lerped follower cursor
 gsap.ticker.add(() => {
+    if (isTouch()) return;
     const dt = 1.0 - Math.pow(1.0 - 0.15, gsap.ticker.deltaRatio());
     followerX += (mouseX - followerX) * dt;
     followerY += (mouseY - followerY) * dt;
@@ -86,6 +93,7 @@ bindCursorHover(interactiveElements);
 const magneticButtons = document.querySelectorAll('.magnetic-button');
 magneticButtons.forEach((btn) => {
     btn.addEventListener('mousemove', (e) => {
+        if (isTouch()) return;
         const bound = btn.getBoundingClientRect();
         const x = e.clientX - bound.left - bound.width / 2;
         const y = e.clientY - bound.top - bound.height / 2;
@@ -99,6 +107,7 @@ magneticButtons.forEach((btn) => {
     });
     
     btn.addEventListener('mouseleave', () => {
+        if (isTouch()) return;
         gsap.to(btn, {
             x: 0,
             y: 0,
@@ -112,6 +121,7 @@ magneticButtons.forEach((btn) => {
 const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach((card) => {
     card.addEventListener('mousemove', (e) => {
+        if (isTouch()) return;
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -136,6 +146,7 @@ projectCards.forEach((card) => {
     });
     
     card.addEventListener('mouseleave', () => {
+        if (isTouch()) return;
         gsap.to(card, {
             rotateX: 0,
             rotateY: 0,
@@ -206,7 +217,7 @@ document.fonts.ready.then(() => {
 
 // Scroll parallax and slow zoom animation for portrait
 gsap.to('.hero-portrait', {
-    yPercent: 12, // Slight parallax
+    yPercent: () => isMobile() ? 0 : 12, // Disable parallax on mobile
     scale: 1.05,  // Slow 105% zoom
     ease: 'none',
     scrollTrigger: {
@@ -447,6 +458,7 @@ function hideTooltip() {
 
 // Mouse Parallax on entire Orbit Container
 orbitContainer.addEventListener('mousemove', (e) => {
+    if (isTouch()) return;
     const rect = orbitContainer.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
@@ -475,7 +487,7 @@ function createOrbitParticles() {
     const particlesContainer = document.getElementById('orbit-particles');
     if (!particlesContainer) return;
     
-    const particleCount = 20;
+    const particleCount = isMobile() ? 5 : 20;
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'absolute w-1.5 h-1.5 rounded-full bg-[#E8B17C] opacity-0 blur-[1px] pointer-events-none';
@@ -940,4 +952,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitLoader.classList.add('hidden');
             });
     });
+});
+
+// Automatically apply lazy loading to all images that aren't specifically marked eager
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('img:not([loading="eager"])').forEach(img => {
+        if (!img.getAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
+    });
+    
+    // Bind project card click handlers
+    const bindClick = (id, handler) => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('click', handler);
+    };
+
+    bindClick('btn-autoresq', openAutoresqLightbox);
+    bindClick('btn-autoresq-view', openAutoresqLightbox);
+    
+    bindClick('btn-college', openCollegeLightbox);
+    bindClick('btn-college-view', openCollegeLightbox);
+    
+    bindClick('btn-mediswift', openMediswiftLightbox);
+    bindClick('btn-mediswift-view', openMediswiftLightbox);
+    
+    bindClick('btn-gbm', openGbmLightbox);
+    bindClick('btn-gbm-view', openGbmLightbox);
+
+    // Bind modal close handlers
+    bindClick('close-autoresq-top', closeAutoresqLightbox);
+    bindClick('close-autoresq-btm', closeAutoresqLightbox);
+    
+    bindClick('close-college-top', closeCollegeLightbox);
+    bindClick('close-college-btm', closeCollegeLightbox);
+    
+    bindClick('close-mediswift-top', closeMediswiftLightbox);
+    bindClick('close-mediswift-btm', closeMediswiftLightbox);
+    
+    bindClick('close-gbm-top', closeGbmLightbox);
+    bindClick('close-gbm-btm', closeGbmLightbox);
 });
